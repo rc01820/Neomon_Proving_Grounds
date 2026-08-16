@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid g3">
+    <div class="card"><div class="card-label">EHR (Epic)</div><div class="ring-wrap"><div class="ring"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/><circle cx="36" cy="36" r="30" fill="none" stroke="#34d399" stroke-width="6" stroke-dasharray="187.7 188.5" stroke-linecap="round"/></svg><div class="ring-val c-green">99.8%</div></div><div><div style="font-size:11px;color:var(--dim)">Uptime</div><div class="badge badge-green" style="margin-top:4px">Operational</div></div></div></div>
+    <div class="card"><div class="card-label">PACS (GE)</div><div class="ring-wrap"><div class="ring"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/><circle cx="36" cy="36" r="30" fill="none" stroke="#fbbf24" stroke-width="6" stroke-dasharray="182 188.5" stroke-linecap="round"/></svg><div class="ring-val c-amber">96.7%</div></div><div><div style="font-size:11px;color:var(--dim)">Uptime</div><div class="badge badge-amber" style="margin-top:4px">Degraded</div></div></div></div>
+    <div class="card"><div class="card-label">LIS (PathNet)</div><div class="ring-wrap"><div class="ring"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/><circle cx="36" cy="36" r="30" fill="none" stroke="#34d399" stroke-width="6" stroke-dasharray="187.7 188.5" stroke-linecap="round"/></svg><div class="ring-val c-green">99.9%</div></div><div><div style="font-size:11px;color:var(--dim)">Uptime</div><div class="badge badge-green" style="margin-top:4px">Operational</div></div></div></div>
+</div>
+<div class="section-title">Lab turnaround time</div>
+<div class="grid g4">
+    <div class="card"><div class="card-label">CBC</div><div class="card-value card-value-sm">24<span class="val-unit">min</span></div><div class="card-sub c-green">Within target</div></div>
+    <div class="card"><div class="card-label">BMP</div><div class="card-value card-value-sm">31<span class="val-unit">min</span></div><div class="card-sub c-green">Within target</div></div>
+    <div class="card"><div class="card-label">Troponin</div><div class="card-value card-value-sm c-amber">52<span class="val-unit">min</span></div><div class="card-sub c-amber">Above target (45m)</div></div>
+    <div class="card"><div class="card-label">Blood culture</div><div class="card-value card-value-sm">18<span class="val-unit">h</span></div><div class="card-sub c-green">Within target</div></div>
+</div>
+<div class="section-title">HL7/FHIR interface status</div>
+<div class="grid g4">
+    <div class="card" style="text-align:center"><div style="font-size:11px;color:var(--dim)">ADT feeds</div><div class="badge badge-green" style="margin-top:6px">Active</div><div style="font-family:monospace;font-size:10px;color:var(--dim);margin-top:4px">1,240 msg/h</div></div>
+    <div class="card" style="text-align:center"><div style="font-size:11px;color:var(--dim)">Lab results</div><div class="badge badge-green" style="margin-top:6px">Active</div><div style="font-family:monospace;font-size:10px;color:var(--dim);margin-top:4px">890 msg/h</div></div>
+    <div class="card" style="text-align:center"><div style="font-size:11px;color:var(--dim)">Pharmacy</div><div class="badge badge-green" style="margin-top:6px">Active</div><div style="font-family:monospace;font-size:10px;color:var(--dim);margin-top:4px">620 msg/h</div></div>
+    <div class="card" style="text-align:center"><div style="font-size:11px;color:var(--dim)">Radiology</div><div class="badge badge-amber" style="margin-top:6px">Delayed</div><div style="font-family:monospace;font-size:10px;color:var(--dim);margin-top:4px">310 msg/h</div></div>
+</div>
+{% endblock %}

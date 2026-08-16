@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid g4">
+    <div class="card"><div class="card-label">Active flights</div><div class="card-value c-accent">1,247</div><div class="card-sub">Tracked in ARTCC airspace</div></div>
+    <div class="card"><div class="card-label">Departure delays</div><div class="card-value c-amber">38<span class="val-unit">min avg</span></div><div class="card-sub">+12 min vs normal</div></div>
+    <div class="card"><div class="card-label">System uptime</div><div class="card-value c-green">99.97<span class="val-unit">%</span></div><div class="card-sub">30-day rolling</div></div>
+    <div class="card"><div class="card-label">Active alerts</div><div class="card-value c-red">{{ effects|length }}</div><div class="card-sub">{{ effects|length }} fault(s) injected</div></div>
+</div>
+<div class="section-title">Sector traffic load</div>
+<div class="card">
+    <div class="bar-row"><span class="bar-label">Sector 31 (High)</span><div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--red)"></div></div><span class="bar-val c-red">92%</span></div>
+    <div class="bar-row"><span class="bar-label">Sector 22 (Low)</span><div class="bar-track"><div class="bar-fill" style="width:78%;background:var(--amber)"></div></div><span class="bar-val c-amber">78%</span></div>
+    <div class="bar-row"><span class="bar-label">Sector 14 (High)</span><div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--accent)"></div></div><span class="bar-val">65%</span></div>
+    <div class="bar-row"><span class="bar-label">Sector 08 (Low)</span><div class="bar-track"><div class="bar-fill" style="width:45%;background:var(--accent)"></div></div><span class="bar-val">45%</span></div>
+    <div class="bar-row"><span class="bar-label">Sector 41 (Ultra)</span><div class="bar-track"><div class="bar-fill" style="width:34%;background:var(--accent)"></div></div><span class="bar-val">34%</span></div>
+</div>
+<div class="section-title">Runway utilization</div>
+<div class="grid g3">
+    <div class="card"><div class="card-label">RWY 04L/22R</div><div class="card-value card-value-sm">42<span class="val-unit"> ops/hr</span></div><div class="card-sub badge badge-green">Active</div></div>
+    <div class="card"><div class="card-label">RWY 04R/22L</div><div class="card-value card-value-sm">38<span class="val-unit"> ops/hr</span></div><div class="card-sub badge badge-green">Active</div></div>
+    <div class="card"><div class="card-label">RWY 13L/31R</div><div class="card-value card-value-sm">0<span class="val-unit"> ops/hr</span></div><div class="card-sub badge badge-amber">Maintenance</div></div>
+</div>
+{% endblock %}

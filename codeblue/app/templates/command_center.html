@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid g4">
+    <div class="card"><div class="card-label">Total census</div><div class="card-value">847</div><div class="card-sub"><span class="c-green">+12</span> from 06:00</div></div>
+    <div class="card"><div class="card-label">ED wait time</div><div class="card-value c-amber">38<span class="val-unit">min</span></div><div class="card-sub">Target: &lt;30 min</div></div>
+    <div class="card"><div class="card-label">Bed occupancy</div><div class="card-value">91<span class="val-unit">%</span></div><div class="card-sub"><span class="c-red">+4%</span> past 4h</div></div>
+    <div class="card"><div class="card-label">Active alerts</div><div class="card-value c-red">{{ effects|length }}</div><div class="card-sub">{{ effects|length }} fault(s) injected</div></div>
+</div>
+<div class="section-title">Unit occupancy</div>
+<div class="card">
+    <div class="bar-row"><span class="bar-label">ICU</span><div class="bar-track"><div class="bar-fill" style="width:96%;background:var(--red)"></div></div><span class="bar-val c-red">96%</span></div>
+    <div class="bar-row"><span class="bar-label">Med/Surg</span><div class="bar-track"><div class="bar-fill" style="width:89%;background:var(--amber)"></div></div><span class="bar-val c-amber">89%</span></div>
+    <div class="bar-row"><span class="bar-label">Cardiac</span><div class="bar-track"><div class="bar-fill" style="width:82%;background:var(--accent)"></div></div><span class="bar-val">82%</span></div>
+    <div class="bar-row"><span class="bar-label">Maternity</span><div class="bar-track"><div class="bar-fill" style="width:71%;background:var(--accent)"></div></div><span class="bar-val">71%</span></div>
+    <div class="bar-row"><span class="bar-label">Pediatrics</span><div class="bar-track"><div class="bar-fill" style="width:64%;background:var(--accent)"></div></div><span class="bar-val">64%</span></div>
+    <div class="bar-row"><span class="bar-label">Oncology</span><div class="bar-track"><div class="bar-fill" style="width:78%;background:var(--accent)"></div></div><span class="bar-val">78%</span></div>
+</div>
+<div class="section-title">OR utilization</div>
+<div class="grid g3">
+    <div class="card"><div class="card-label">Scheduled cases</div><div class="card-value card-value-sm">42</div><div class="card-sub">6 completed, 4 in progress</div></div>
+    <div class="card"><div class="card-label">OR utilization</div><div class="card-value card-value-sm c-accent">78<span class="val-unit">%</span></div><div class="card-sub">12 of 16 ORs active</div></div>
+    <div class="card"><div class="card-label">Avg turnover</div><div class="card-value card-value-sm">27<span class="val-unit">min</span></div><div class="card-sub">Target: &lt;25 min</div></div>
+</div>
+{% endblock %}

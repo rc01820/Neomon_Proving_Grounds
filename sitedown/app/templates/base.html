@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiteDown — Neomon Proving Grounds</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-mark">&#x26A0;</div>
+                <div>
+                    <div class="logo-title">SiteDown</div>
+                    <div class="logo-sub">IT Operations &middot; Neomon Proving Grounds</div>
+                </div>
+            </div>
+            <div class="header-status">
+                {% if effects %}
+                <span class="status-dot status-fault"></span>
+                <span class="status-text">{{ effects|length }} active fault{{ "s" if effects|length != 1 }}</span>
+                {% else %}
+                <span class="status-dot status-ok"></span>
+                <span class="status-text">All systems nominal</span>
+                {% endif %}
+            </div>
+        </header>
+        <nav class="app-nav">
+        <a href="/" class="nav-tab {% if active_page == 'noc_overview' %}active{% endif %}">NOC Overview</a>
+        <a href="/service_health" class="nav-tab {% if active_page == 'service_health' %}active{% endif %}">Service Health</a>
+        <a href="/incidents" class="nav-tab {% if active_page == 'incidents' %}active{% endif %}">Incidents</a>
+        <a href="/faults" class="nav-tab {% if active_page == 'faults' %}active{% endif %}">Fault Console</a>
+        </nav>
+        <main class="app-main">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeBlue — Neomon Proving Grounds</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-mark">&#x2795;</div>
+                <div>
+                    <div class="logo-title">CodeBlue</div>
+                    <div class="logo-sub">Healthcare Operations &middot; Neomon Proving Grounds</div>
+                </div>
+            </div>
+            <div class="header-status">
+                {% if effects %}
+                <span class="status-dot status-fault"></span>
+                <span class="status-text">{{ effects|length }} active fault{{ "s" if effects|length != 1 }}</span>
+                {% else %}
+                <span class="status-dot status-ok"></span>
+                <span class="status-text">All systems nominal</span>
+                {% endif %}
+            </div>
+        </header>
+        <nav class="app-nav">
+        <a href="/" class="nav-tab {% if active_page == 'command_center' %}active{% endif %}">Command Center</a>
+        <a href="/patient_flow" class="nav-tab {% if active_page == 'patient_flow' %}active{% endif %}">Patient Flow</a>
+        <a href="/clinical_systems" class="nav-tab {% if active_page == 'clinical_systems' %}active{% endif %}">Clinical Systems</a>
+        <a href="/faults" class="nav-tab {% if active_page == 'faults' %}active{% endif %}">Fault Console</a>
+        </nav>
+        <main class="app-main">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

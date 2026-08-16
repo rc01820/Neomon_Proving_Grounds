@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid g3">
+    <div class="card"><div class="card-label">VaR utilization</div><div class="card-value c-amber">87<span class="val-unit">%</span></div><div class="card-sub">Limit: $12.4M | Used: $10.8M</div></div>
+    <div class="card"><div class="card-label">Margin excess</div><div class="card-value c-green">$4.2<span class="val-unit">M</span></div><div class="card-sub">Above minimum requirement</div></div>
+    <div class="card"><div class="card-label">Compliance alerts</div><div class="card-value">2</div><div class="card-sub">0 critical, 2 info</div></div>
+</div>
+<div class="section-title">Risk limits by desk</div>
+<div class="card">
+    <div class="bar-row"><span class="bar-label">Equities</span><div class="bar-track"><div class="bar-fill" style="width:91%;background:var(--amber)"></div></div><span class="bar-val c-amber">91%</span></div>
+    <div class="bar-row"><span class="bar-label">Fixed Income</span><div class="bar-track"><div class="bar-fill" style="width:72%;background:var(--accent)"></div></div><span class="bar-val">72%</span></div>
+    <div class="bar-row"><span class="bar-label">Derivatives</span><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--amber)"></div></div><span class="bar-val c-amber">85%</span></div>
+    <div class="bar-row"><span class="bar-label">FX</span><div class="bar-track"><div class="bar-fill" style="width:45%;background:var(--accent)"></div></div><span class="bar-val">45%</span></div>
+</div>
+<div class="section-title">Regulatory reporting</div>
+<div class="grid g4">
+    <div class="card" style="text-align:center"><div style="font-size:11px;color:var(--dim)">EMIR</div><div class="badge badge-green" style="margin-top:6px">Current</div><div style="font-family:monospace;font-size:10px;color:var(--dim);margin-top:4px">Last: 06:00</div></div>
+    <div class="card" style="text-align:center"><div style="font-size:11px;color:var(--dim)">MiFID II</div><div class="badge badge-green" style="margin-top:6px">Current</div><div style="font-family:monospace;font-size:10px;color:var(--dim);margin-top:4px">Last: 06:00</div></div>
+    <div class="card" style="text-align:center"><div style="font-size:11px;color:var(--dim)">Dodd-Frank</div><div class="badge badge-green" style="margin-top:6px">Current</div><div style="font-family:monospace;font-size:10px;color:var(--dim);margin-top:4px">Last: 06:00</div></div>
+    <div class="card" style="text-align:center"><div style="font-size:11px;color:var(--dim)">SOX audit</div><div class="badge badge-amber" style="margin-top:6px">Review</div><div style="font-family:monospace;font-size:10px;color:var(--dim);margin-top:4px">Due: 14d</div></div>
+</div>
+{% endblock %}

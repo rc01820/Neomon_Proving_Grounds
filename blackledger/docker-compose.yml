@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  blackledger:
+    build: .
+    container_name: blackledger
+    ports:
+      - "${APP_PORT:-8003}:8003"
+    env_file:
+      - .env
+    environment:
+      - APP_NAME=blackledger
+      - APP_PORT=8003
+    volumes:
+      - blackledger-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  blackledger-data:

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="section-title">ATC system status</div>
+<div class="grid g3">
+    <div class="card">
+        <div class="card-label">Primary radar (ASR-11)</div>
+        <div class="ring-wrap">
+            <div class="ring"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/><circle cx="36" cy="36" r="30" fill="none" stroke="#34d399" stroke-width="6" stroke-dasharray="187.7 188.5" stroke-linecap="round"/></svg><div class="ring-val c-green">99.9%</div></div>
+            <div><div style="font-size:11px;color:var(--dim)">Uptime</div><div class="badge badge-green" style="margin-top:4px">Operational</div></div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-label">STARS display system</div>
+        <div class="ring-wrap">
+            <div class="ring"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/><circle cx="36" cy="36" r="30" fill="none" stroke="#34d399" stroke-width="6" stroke-dasharray="186 188.5" stroke-linecap="round"/></svg><div class="ring-val c-green">99.1%</div></div>
+            <div><div style="font-size:11px;color:var(--dim)">Uptime</div><div class="badge badge-green" style="margin-top:4px">Operational</div></div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-label">Voice comm (VSCS)</div>
+        <div class="ring-wrap">
+            <div class="ring"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/><circle cx="36" cy="36" r="30" fill="none" stroke="#fbbf24" stroke-width="6" stroke-dasharray="182 188.5" stroke-linecap="round"/></svg><div class="ring-val c-amber">96.7%</div></div>
+            <div><div style="font-size:11px;color:var(--dim)">Uptime</div><div class="badge badge-amber" style="margin-top:4px">Degraded</div></div>
+        </div>
+    </div>
+</div>
+<div class="section-title">Communication channels</div>
+<div class="card">
+    <ul class="data-list">
+        <li><span class="badge badge-green">Active</span><span style="flex:1">Ground control — 121.900 MHz</span><span style="font-family:monospace;color:var(--dim);font-size:11px">Signal OK</span></li>
+        <li><span class="badge badge-green">Active</span><span style="flex:1">Tower — 119.100 MHz</span><span style="font-family:monospace;color:var(--dim);font-size:11px">Signal OK</span></li>
+        <li><span class="badge badge-green">Active</span><span style="flex:1">Approach — 124.350 MHz</span><span style="font-family:monospace;color:var(--dim);font-size:11px">Signal OK</span></li>
+        <li><span class="badge badge-amber">Degraded</span><span style="flex:1">ATIS — 127.800 MHz</span><span style="font-family:monospace;color:var(--dim);font-size:11px">Low signal</span></li>
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid g4">
+    <div class="card"><div class="card-label">Settlements today</div><div class="card-value">12,847</div><div class="card-sub">$8.4B notional</div></div>
+    <div class="card"><div class="card-label">Failed settlements</div><div class="card-value c-red">23</div><div class="card-sub">0.18% failure rate</div></div>
+    <div class="card"><div class="card-label">Pending T+1</div><div class="card-value c-amber">1,204</div><div class="card-sub">$2.1B notional</div></div>
+    <div class="card"><div class="card-label">Reconciliation</div><div class="card-value c-green">99.4<span class="val-unit">%</span></div><div class="card-sub">Auto-matched</div></div>
+</div>
+<div class="section-title">Settlement status by type</div>
+<div class="card">
+    <div class="bar-row"><span class="bar-label">Equities DvP</span><div class="bar-track"><div class="bar-fill" style="width:98%;background:var(--green)"></div></div><span class="bar-val c-green">98.2%</span></div>
+    <div class="bar-row"><span class="bar-label">Fixed Income</span><div class="bar-track"><div class="bar-fill" style="width:97%;background:var(--green)"></div></div><span class="bar-val c-green">97.4%</span></div>
+    <div class="bar-row"><span class="bar-label">FX Spot</span><div class="bar-track"><div class="bar-fill" style="width:99%;background:var(--green)"></div></div><span class="bar-val c-green">99.1%</span></div>
+    <div class="bar-row"><span class="bar-label">OTC Derivatives</span><div class="bar-track"><div class="bar-fill" style="width:94%;background:var(--amber)"></div></div><span class="bar-val c-amber">94.8%</span></div>
+</div>
+<div class="section-title">SWIFT message queue</div>
+<div class="card">
+    <ul class="data-list">
+        <li><span class="badge badge-green">Sent</span><span style="flex:1">MT103 — Customer transfer $2.4M → BNY Mellon</span><span style="font-family:monospace;color:var(--dim);font-size:11px">14:28 UTC</span></li>
+        <li><span class="badge badge-amber">Pending</span><span style="flex:1">MT202 — Institution transfer $18M → JP Morgan</span><span style="font-family:monospace;color:var(--dim);font-size:11px">14:22 UTC</span></li>
+        <li><span class="badge badge-green">Sent</span><span style="flex:1">MT548 — Settlement status confirm</span><span style="font-family:monospace;color:var(--dim);font-size:11px">14:18 UTC</span></li>
+        <li><span class="badge badge-red">Failed</span><span style="flex:1">MT103 — Rejected: invalid BIC in field 59</span><span style="font-family:monospace;color:var(--dim);font-size:11px">14:12 UTC</span></li>
+    </ul>
+</div>
+{% endblock %}

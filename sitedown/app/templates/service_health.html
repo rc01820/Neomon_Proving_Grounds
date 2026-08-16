@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="section-title">Critical path services</div>
+<div class="grid g3">
+    <div class="card"><div class="card-label">API gateway</div><div class="ring-wrap"><div class="ring"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/><circle cx="36" cy="36" r="30" fill="none" stroke="#34d399" stroke-width="6" stroke-dasharray="187.7 188.5" stroke-linecap="round"/></svg><div class="ring-val c-green">99.9%</div></div><div><div style="font-size:11px;color:var(--dim)">Uptime</div><div class="badge badge-green" style="margin-top:4px">Healthy</div></div></div></div>
+    <div class="card"><div class="card-label">Authentication</div><div class="ring-wrap"><div class="ring"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/><circle cx="36" cy="36" r="30" fill="none" stroke="#34d399" stroke-width="6" stroke-dasharray="186 188.5" stroke-linecap="round"/></svg><div class="ring-val c-green">99.1%</div></div><div><div style="font-size:11px;color:var(--dim)">Uptime</div><div class="badge badge-green" style="margin-top:4px">Healthy</div></div></div></div>
+    <div class="card"><div class="card-label">PostgreSQL primary</div><div class="ring-wrap"><div class="ring"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/><circle cx="36" cy="36" r="30" fill="none" stroke="#fbbf24" stroke-width="6" stroke-dasharray="183 188.5" stroke-linecap="round"/></svg><div class="ring-val c-amber">97.2%</div></div><div><div style="font-size:11px;color:var(--dim)">Uptime</div><div class="badge badge-amber" style="margin-top:4px">Elevated errors</div></div></div></div>
+</div>
+<div class="section-title">Kubernetes cluster</div>
+<div class="grid g4">
+    <div class="card"><div class="card-label">Pods running</div><div class="card-value card-value-sm c-green">247</div><div class="card-sub">of 260 desired</div></div>
+    <div class="card"><div class="card-label">Pods pending</div><div class="card-value card-value-sm c-amber">8</div><div class="card-sub">CPU pressure on node 4</div></div>
+    <div class="card"><div class="card-label">CrashLoopBackOff</div><div class="card-value card-value-sm c-red">5</div><div class="card-sub">api-core, worker-3</div></div>
+    <div class="card"><div class="card-label">Node health</div><div class="card-value card-value-sm">11<span class="val-unit">/12</span></div><div class="card-sub">1 node NotReady</div></div>
+</div>
+<div class="section-title">External dependencies</div>
+<div class="card">
+    <ul class="data-list">
+        <li><span class="badge badge-green">OK</span><span style="flex:1">Stripe payment API</span><span style="font-family:monospace;color:var(--dim);font-size:11px">P99: 120ms</span></li>
+        <li><span class="badge badge-green">OK</span><span style="flex:1">SendGrid email API</span><span style="font-family:monospace;color:var(--dim);font-size:11px">P99: 340ms</span></li>
+        <li><span class="badge badge-amber">Slow</span><span style="flex:1">Twilio SMS API</span><span style="font-family:monospace;color:var(--dim);font-size:11px">P99: 2.4s</span></li>
+        <li><span class="badge badge-green">OK</span><span style="flex:1">AWS S3 us-east-1</span><span style="font-family:monospace;color:var(--dim);font-size:11px">P99: 45ms</span></li>
+    </ul>
+</div>
+{% endblock %}

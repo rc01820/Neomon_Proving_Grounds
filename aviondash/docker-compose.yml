@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  aviondash:
+    build: .
+    container_name: aviondash
+    ports:
+      - "${APP_PORT:-8001}:8001"
+    env_file:
+      - .env
+    environment:
+      - APP_NAME=aviondash
+      - APP_PORT=8001
+    volumes:
+      - aviondash-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  aviondash-data:

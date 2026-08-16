@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  codeblue:
+    build: .
+    container_name: codeblue
+    ports:
+      - "${APP_PORT:-8002}:8002"
+    env_file:
+      - .env
+    environment:
+      - APP_NAME=codeblue
+      - APP_PORT=8002
+    volumes:
+      - codeblue-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  codeblue-data:

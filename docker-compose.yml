@@ -1,0 +1,65 @@
+version: "3.9"
+
+# ──────────────────────────────────────────────────────────────
+# Neomon Proving Grounds — Full Suite
+#
+# Runs all four apps. To run a subset, use profiles:
+#   docker compose --profile healthcare --profile financial up -d
+#
+# Or deploy individual apps from their own directories.
+# ──────────────────────────────────────────────────────────────
+
+services:
+  aviondash:
+    build: ./aviondash
+    container_name: proving-grounds-aviondash
+    profiles: ["aviation", "all"]
+    ports:
+      - "${AVIONDASH_PORT:-8001}:8001"
+    env_file:
+      - ./aviondash/.env
+    volumes:
+      - aviondash-data:/app/data
+    restart: unless-stopped
+
+  codeblue:
+    build: ./codeblue
+    container_name: proving-grounds-codeblue
+    profiles: ["healthcare", "all"]
+    ports:
+      - "${CODEBLUE_PORT:-8002}:8002"
+    env_file:
+      - ./codeblue/.env
+    volumes:
+      - codeblue-data:/app/data
+    restart: unless-stopped
+
+  blackledger:
+    build: ./blackledger
+    container_name: proving-grounds-blackledger
+    profiles: ["financial", "all"]
+    ports:
+      - "${BLACKLEDGER_PORT:-8003}:8003"
+    env_file:
+      - ./blackledger/.env
+    volumes:
+      - blackledger-data:/app/data
+    restart: unless-stopped
+
+  sitedown:
+    build: ./sitedown
+    container_name: proving-grounds-sitedown
+    profiles: ["it-ops", "all"]
+    ports:
+      - "${SITEDOWN_PORT:-8004}:8004"
+    env_file:
+      - ./sitedown/.env
+    volumes:
+      - sitedown-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  aviondash-data:
+  codeblue-data:
+  blackledger-data:
+  sitedown-data:

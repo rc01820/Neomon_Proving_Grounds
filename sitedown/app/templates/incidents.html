@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid g3">
+    <div class="card"><div class="card-label">Open incidents</div><div class="card-value c-red">3</div><div class="card-sub">1 P1 | 2 P2</div></div>
+    <div class="card"><div class="card-label">MTTR (30d)</div><div class="card-value">32<span class="val-unit">min</span></div><div class="card-sub"><span class="c-green">-11 min</span> vs prior month</div></div>
+    <div class="card"><div class="card-label">SLO budget remaining</div><div class="card-value c-amber">22<span class="val-unit">%</span></div><div class="card-sub">14 days left in window</div></div>
+</div>
+<div class="section-title">Active incidents</div>
+<div class="card">
+    <ul class="data-list">
+        <li style="flex-wrap:wrap"><div style="display:flex;align-items:center;gap:10px;width:100%"><span class="badge badge-red">P1</span><span style="flex:1;font-weight:500">Kafka consumer lag — order processing pipeline stalled</span><span style="font-family:monospace;color:var(--dim);font-size:11px">38m ago</span></div><div style="width:100%;font-size:11px;color:var(--dim);padding:4px 0 0 42px">Consumer group paused. 14,200 messages queued. On-call paged.</div></li>
+        <li style="flex-wrap:wrap"><div style="display:flex;align-items:center;gap:10px;width:100%"><span class="badge badge-amber">P2</span><span style="flex:1;font-weight:500">K8s node 4 NotReady — CPU pressure</span><span style="font-family:monospace;color:var(--dim);font-size:11px">1h 12m ago</span></div><div style="width:100%;font-size:11px;color:var(--dim);padding:4px 0 0 42px">8 pods rescheduled. Autoscaler provisioning replacement node.</div></li>
+        <li style="flex-wrap:wrap"><div style="display:flex;align-items:center;gap:10px;width:100%"><span class="badge badge-amber">P2</span><span style="flex:1;font-weight:500">Canary deployment rollback stuck — api-core v2.4.1</span><span style="font-family:monospace;color:var(--dim);font-size:11px">2h 5m ago</span></div><div style="width:100%;font-size:11px;color:var(--dim);padding:4px 0 0 42px">Rollback to v2.3.8 in progress. Image pull timing out from registry.</div></li>
+    </ul>
+</div>
+<div class="section-title">Recent timeline</div>
+<div class="card">
+    <div class="timeline">
+        <div class="timeline-item crit"><div class="timeline-time">14:24</div><div class="timeline-msg">Kafka consumer lag alert triggered — order-processor group paused</div></div>
+        <div class="timeline-item warn"><div class="timeline-time">13:50</div><div class="timeline-msg">K8s node 4 transitioned to NotReady — CPUPressure condition</div></div>
+        <div class="timeline-item warn"><div class="timeline-time">12:57</div><div class="timeline-msg">Canary deployment api-core v2.4.1 — error rate 14%, rollback initiated</div></div>
+        <div class="timeline-item ok"><div class="timeline-time">12:20</div><div class="timeline-msg">Twilio API latency recovered — P99 back to 280ms baseline</div></div>
+        <div class="timeline-item ok"><div class="timeline-time">10:00</div><div class="timeline-msg">Scheduled maintenance window completed — Redis cluster rebalanced</div></div>
+    </div>
+</div>
+{% endblock %}

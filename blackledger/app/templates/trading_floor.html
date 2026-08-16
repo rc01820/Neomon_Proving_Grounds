@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid g4">
+    <div class="card"><div class="card-label">Orders processed</div><div class="card-value c-accent">2.4<span class="val-unit">M</span></div><div class="card-sub">Today's volume</div></div>
+    <div class="card"><div class="card-label">Matching latency P99</div><div class="card-value c-green">12<span class="val-unit">ms</span></div><div class="card-sub">SLA: &lt;100ms</div></div>
+    <div class="card"><div class="card-label">Fill rate</div><div class="card-value">98.7<span class="val-unit">%</span></div><div class="card-sub">Target: &gt;98%</div></div>
+    <div class="card"><div class="card-label">Active alerts</div><div class="card-value c-red">{{ effects|length }}</div><div class="card-sub">{{ effects|length }} fault(s) injected</div></div>
+</div>
+<div class="section-title">Market data feeds</div>
+<div class="card">
+    <ul class="data-list">
+        <li><span class="badge badge-green">Live</span><span style="flex:1">NYSE Equities — Level 2</span><span style="font-family:monospace;color:var(--dim);font-size:11px">42,000 msg/s</span></li>
+        <li><span class="badge badge-green">Live</span><span style="flex:1">NASDAQ TotalView</span><span style="font-family:monospace;color:var(--dim);font-size:11px">38,400 msg/s</span></li>
+        <li><span class="badge badge-green">Live</span><span style="flex:1">CME Globex — Futures</span><span style="font-family:monospace;color:var(--dim);font-size:11px">18,200 msg/s</span></li>
+        <li><span class="badge badge-amber">Delayed</span><span style="flex:1">ICE — Options</span><span style="font-family:monospace;color:var(--dim);font-size:11px">12,800 msg/s (3s lag)</span></li>
+    </ul>
+</div>
+<div class="section-title">Order flow by desk</div>
+<div class="card">
+    <div class="bar-row"><span class="bar-label">Equities</span><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--accent)"></div></div><span class="bar-val">1.2M</span></div>
+    <div class="bar-row"><span class="bar-label">Fixed Income</span><div class="bar-track"><div class="bar-fill" style="width:45%;background:var(--accent)"></div></div><span class="bar-val">640K</span></div>
+    <div class="bar-row"><span class="bar-label">Derivatives</span><div class="bar-track"><div class="bar-fill" style="width:30%;background:var(--accent)"></div></div><span class="bar-val">420K</span></div>
+    <div class="bar-row"><span class="bar-label">FX</span><div class="bar-track"><div class="bar-fill" style="width:15%;background:var(--accent)"></div></div><span class="bar-val">180K</span></div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid g4">
+    <div class="card"><div class="card-label">Services monitored</div><div class="card-value c-accent">142</div><div class="card-sub">Across 3 regions</div></div>
+    <div class="card"><div class="card-label">Overall uptime</div><div class="card-value c-green">99.94<span class="val-unit">%</span></div><div class="card-sub">30-day rolling SLA</div></div>
+    <div class="card"><div class="card-label">P99 latency</div><div class="card-value">48<span class="val-unit">ms</span></div><div class="card-sub">API gateway global</div></div>
+    <div class="card"><div class="card-label">Active incidents</div><div class="card-value c-red">{{ effects|length }}</div><div class="card-sub">{{ effects|length }} fault(s) injected</div></div>
+</div>
+<div class="section-title">Service status by tier</div>
+<div class="device-grid">
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">API</div>
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">Auth</div>
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">Web</div>
+    <div class="device-cell" style="background:rgba(248,113,113,0.12);color:var(--red)">Queue</div>
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">CDN</div>
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">DNS</div>
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">DB-P</div>
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">DB-R1</div>
+    <div class="device-cell" style="background:rgba(251,191,36,0.12);color:var(--amber)">DB-R2</div>
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">Redis</div>
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">Kafka</div>
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">S3</div>
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">K8s-1</div>
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">K8s-2</div>
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">K8s-3</div>
+    <div class="device-cell" style="background:rgba(251,191,36,0.12);color:var(--amber)">K8s-4</div>
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">LB-1</div>
+    <div class="device-cell" style="background:rgba(52,211,153,0.12);color:var(--green)">LB-2</div>
+</div>
+<div class="section-title">Regional health</div>
+<div class="grid g3">
+    <div class="card"><div class="card-label">US-East-1</div><div class="card-value card-value-sm c-green">100<span class="val-unit">%</span></div><div class="card-sub">48 services healthy</div></div>
+    <div class="card"><div class="card-label">EU-West-1</div><div class="card-value card-value-sm c-amber">98.2<span class="val-unit">%</span></div><div class="card-sub">1 service degraded</div></div>
+    <div class="card"><div class="card-label">AP-Southeast-1</div><div class="card-value card-value-sm c-green">100<span class="val-unit">%</span></div><div class="card-sub">46 services healthy</div></div>
+</div>
+{% endblock %}

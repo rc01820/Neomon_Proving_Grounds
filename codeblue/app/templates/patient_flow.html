@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid g4">
+    <div class="card"><div class="card-label">ED arrivals (24h)</div><div class="card-value">187</div><div class="card-sub"><span class="c-green">+8%</span> vs avg</div></div>
+    <div class="card"><div class="card-label">Admissions (24h)</div><div class="card-value">64</div><div class="card-sub">32 planned, 32 emergency</div></div>
+    <div class="card"><div class="card-label">Discharges (24h)</div><div class="card-value">52</div><div class="card-sub"><span class="c-red">-12</span> vs target</div></div>
+    <div class="card"><div class="card-label">Boarders in ED</div><div class="card-value c-red">11</div><div class="card-sub">Avg wait: 4.2h</div></div>
+</div>
+<div class="section-title">Discharge pipeline</div>
+<div class="grid g3">
+    <div class="card"><div class="card-label">Pending physician sign-off</div><div class="card-value card-value-sm">18</div></div>
+    <div class="card"><div class="card-label">Awaiting transport</div><div class="card-value card-value-sm c-amber">7</div></div>
+    <div class="card"><div class="card-label">Pharmacy hold</div><div class="card-value card-value-sm">4</div></div>
+</div>
+<div class="section-title">Avg length of stay by unit</div>
+<div class="card">
+    <div class="bar-row"><span class="bar-label">ICU</span><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--purple)"></div></div><span class="bar-val">5.2d</span></div>
+    <div class="bar-row"><span class="bar-label">Med/Surg</span><div class="bar-track"><div class="bar-fill" style="width:55%;background:var(--purple)"></div></div><span class="bar-val">3.4d</span></div>
+    <div class="bar-row"><span class="bar-label">Cardiac</span><div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--purple)"></div></div><span class="bar-val">4.1d</span></div>
+    <div class="bar-row"><span class="bar-label">Maternity</span><div class="bar-track"><div class="bar-fill" style="width:35%;background:var(--purple)"></div></div><span class="bar-val">2.1d</span></div>
+</div>
+{% endblock %}

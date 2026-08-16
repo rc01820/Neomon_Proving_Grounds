@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  sitedown:
+    build: .
+    container_name: sitedown
+    ports:
+      - "${APP_PORT:-8004}:8004"
+    env_file:
+      - .env
+    environment:
+      - APP_NAME=sitedown
+      - APP_PORT=8004
+    volumes:
+      - sitedown-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  sitedown-data:

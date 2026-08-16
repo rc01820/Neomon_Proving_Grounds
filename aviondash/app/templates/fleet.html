@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid g4">
+    <div class="card"><div class="card-label">Total fleet</div><div class="card-value">284</div><div class="card-sub">Aircraft in system</div></div>
+    <div class="card"><div class="card-label">In flight</div><div class="card-value c-accent">198</div><div class="card-sub">69.7% utilization</div></div>
+    <div class="card"><div class="card-label">On ground</div><div class="card-value">74</div><div class="card-sub">26 at gate, 48 maintenance</div></div>
+    <div class="card"><div class="card-label">AOG</div><div class="card-value c-red">12</div><div class="card-sub">Aircraft on ground — unplanned</div></div>
+</div>
+<div class="section-title">Fleet type distribution</div>
+<div class="card">
+    <div class="bar-row"><span class="bar-label">B737-800</span><div class="bar-track"><div class="bar-fill" style="width:45%;background:var(--accent)"></div></div><span class="bar-val">128</span></div>
+    <div class="bar-row"><span class="bar-label">A320neo</span><div class="bar-track"><div class="bar-fill" style="width:30%;background:var(--accent)"></div></div><span class="bar-val">85</span></div>
+    <div class="bar-row"><span class="bar-label">B787-9</span><div class="bar-track"><div class="bar-fill" style="width:15%;background:var(--accent)"></div></div><span class="bar-val">42</span></div>
+    <div class="bar-row"><span class="bar-label">A350-900</span><div class="bar-track"><div class="bar-fill" style="width:10%;background:var(--accent)"></div></div><span class="bar-val">29</span></div>
+</div>
+<div class="section-title">Maintenance alerts</div>
+<div class="card">
+    <ul class="data-list">
+        <li><span class="badge badge-red">AOG</span><span style="flex:1">N412UA — Engine 2 vibration sensor fault</span><span style="font-family:monospace;color:var(--dim);font-size:11px">KJFK Gate B12</span></li>
+        <li><span class="badge badge-amber">MEL</span><span style="flex:1">N287SW — APU inoperative, dispatch with MEL</span><span style="font-family:monospace;color:var(--dim);font-size:11px">KORD Gate C8</span></li>
+        <li><span class="badge badge-amber">Sched</span><span style="flex:1">N518DL — C-check due in 48 flight hours</span><span style="font-family:monospace;color:var(--dim);font-size:11px">Enroute KLAX</span></li>
+    </ul>
+</div>
+{% endblock %}
